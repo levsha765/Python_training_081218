@@ -35,13 +35,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="md" value="45" />
-          <entry key="py" value="588" />
+          <entry key="py" value="740" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="45" />
-          <entry key="Python" value="588" />
+          <entry key="Python" value="740" />
         </counts>
       </usages-collector>
     </session>
@@ -51,8 +51,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/add_group.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="58" column="8" lean-forward="true" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="23" />
+            <state relative-caret-position="64">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
               <folding>
                 <element signature="e#24#54#0" expanded="true" />
                 <marker date="1544355585182" expanded="true" signature="2423:2432" ph="..." />
@@ -61,25 +61,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/add_contact.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="99" column="30" lean-forward="true" selection-start-line="99" selection-start-column="30" selection-end-line="99" selection-end-column="30" />
+            <state relative-caret-position="112">
+              <caret line="19" column="47" lean-forward="true" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
               <folding>
                 <element signature="e#24#54#0" expanded="true" />
-                <marker date="1544357467137" expanded="true" signature="861:4526" ph="..." />
-                <marker date="1544357467137" expanded="true" signature="4562:4625" ph="..." />
+                <marker date="1544361211928" expanded="true" signature="890:4547" ph="..." />
+                <marker date="1544361211928" expanded="true" signature="4583:4646" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Contact.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/contact.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="4" column="27" lean-forward="true" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+            <state relative-caret-position="528">
+              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
             </state>
           </provider>
         </entry>
@@ -88,7 +88,7 @@
         <entry file="file://$PROJECT_DIR$/group.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="64">
-              <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+              <caret line="4" column="28" lean-forward="true" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
               <folding>
                 <marker date="1544352809863" expanded="true" signature="12:17" ph="..." />
               </folding>
@@ -114,12 +114,13 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/group.py" />
         <option value="$PROJECT_DIR$/add_group.py" />
-        <option value="$PROJECT_DIR$/add_contact.py" />
         <option value="$PROJECT_DIR$/Contact.py" />
+        <option value="$PROJECT_DIR$/contact.py" />
+        <option value="$PROJECT_DIR$/add_contact.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="11" />
     <option name="y" value="11" />
     <option name="width" value="1400" />
@@ -219,18 +220,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="pytest_in_add_group_py - 2018.12.09 at 13h 46m 09s.xml">
-      <configuration name="pytest in add_group.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_in_add_group_py - 2018.12.09 at 13h 56m 41s.xml">
-      <configuration name="pytest in add_group.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_in_add_group_py - 2018.12.09 at 13h 57m 19s.xml">
-      <configuration name="pytest in add_group.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_in_add_contact_py - 2018.12.09 at 14h 31m 01s.xml">
-      <configuration name="pytest in add_contact.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="pytest_in_add_contact_py - 2018.12.09 at 14h 39m 58s.xml">
       <configuration name="pytest in add_contact.py" configurationId="tests" />
     </history-entry>
@@ -249,17 +238,29 @@
     <history-entry file="pytest_in_add_contact_py - 2018.12.09 at 14h 50m 10s.xml">
       <configuration name="pytest in add_contact.py" configurationId="tests" />
     </history-entry>
+    <history-entry file="pytest_in_add_contact_py - 2018.12.09 at 15h 12m 46s.xml">
+      <configuration name="pytest in add_contact.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_add_contact_py - 2018.12.09 at 15h 13m 24s.xml">
+      <configuration name="pytest in add_contact.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_add_contact_py - 2018.12.09 at 16h 06m 48s.xml">
+      <configuration name="pytest in add_contact.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_add_contact_py - 2018.12.09 at 16h 10m 05s.xml">
+      <configuration name="pytest in add_contact.py" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="11" y="11" width="1400" height="832" extended-state="0" />
+    <frame x="-4" y="-4" width="1608" height="880" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24945295" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21659277" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32913166" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30839896" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -287,10 +288,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/group.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" column="28" lean-forward="true" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+          <folding>
+            <marker date="1544352809863" expanded="true" signature="12:17" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contact.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/add_group.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="58" column="8" lean-forward="true" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="23" />
+        <state relative-caret-position="64">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
           <folding>
             <element signature="e#24#54#0" expanded="true" />
             <marker date="1544355585182" expanded="true" signature="2423:2432" ph="..." />
@@ -300,30 +318,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/add_contact.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="99" column="30" lean-forward="true" selection-start-line="99" selection-start-column="30" selection-end-line="99" selection-end-column="30" />
+        <state relative-caret-position="112">
+          <caret line="19" column="47" lean-forward="true" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
           <folding>
             <element signature="e#24#54#0" expanded="true" />
-            <marker date="1544357467137" expanded="true" signature="861:4526" ph="..." />
-            <marker date="1544357467137" expanded="true" signature="4562:4625" ph="..." />
+            <marker date="1544361211928" expanded="true" signature="890:4547" ph="..." />
+            <marker date="1544361211928" expanded="true" signature="4583:4646" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/group.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-          <folding>
-            <marker date="1544352809863" expanded="true" signature="12:17" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Contact.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="27" lean-forward="true" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
         </state>
       </provider>
     </entry>
