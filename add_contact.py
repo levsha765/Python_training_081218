@@ -24,11 +24,7 @@ class AddContact(unittest.TestCase):
         wd.find_element_by_id("LoginForm").submit()
 
 
-    def test_add_contact(self):
-        wd = self.wd
-        self.open_home_page(wd)
-        self.login(wd, username="admin", password="secret")
-        wd.find_element_by_link_text("add new").click()
+    def create_contact(self, wd):
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").clear()
         wd.find_element_by_name("firstname").send_keys(u"Имя")
@@ -64,15 +60,18 @@ class AddContact(unittest.TestCase):
         Select(wd.find_element_by_name("bday")).select_by_visible_text("12")
         wd.find_element_by_name("bmonth").click()
         Select(wd.find_element_by_name("bmonth")).select_by_visible_text("March")
-        wd.find_element_by_xpath("(.//*[normalize-space(text()) and normalize-space(.)='Birthday:'])[1]/following::option[37]").click()
+        wd.find_element_by_xpath(
+            "(.//*[normalize-space(text()) and normalize-space(.)='Birthday:'])[1]/following::option[37]").click()
         wd.find_element_by_name("byear").clear()
         wd.find_element_by_name("byear").send_keys("1955")
         wd.find_element_by_name("aday").click()
         Select(wd.find_element_by_name("aday")).select_by_visible_text("15")
-        wd.find_element_by_xpath("(.//*[normalize-space(text()) and normalize-space(.)='Anniversary:'])[1]/following::option[17]").click()
+        wd.find_element_by_xpath(
+            "(.//*[normalize-space(text()) and normalize-space(.)='Anniversary:'])[1]/following::option[17]").click()
         wd.find_element_by_name("amonth").click()
         Select(wd.find_element_by_name("amonth")).select_by_visible_text("March")
-        wd.find_element_by_xpath("(.//*[normalize-space(text()) and normalize-space(.)='Anniversary:'])[1]/following::option[37]").click()
+        wd.find_element_by_xpath(
+            "(.//*[normalize-space(text()) and normalize-space(.)='Anniversary:'])[1]/following::option[37]").click()
         wd.find_element_by_name("ayear").click()
         wd.find_element_by_name("ayear").clear()
         wd.find_element_by_name("ayear").send_keys("1960")
@@ -83,8 +82,23 @@ class AddContact(unittest.TestCase):
         wd.find_element_by_name("phone2").send_keys(u"Дом")
         wd.find_element_by_name("notes").clear()
         wd.find_element_by_name("notes").send_keys(u"Описание")
-        wd.find_element_by_xpath("(.//*[normalize-space(text()) and normalize-space(.)='Notes:'])[1]/following::input[1]").click()
+        wd.find_element_by_xpath(
+            "(.//*[normalize-space(text()) and normalize-space(.)='Notes:'])[1]/following::input[1]").click()
+
+    def Logout(self, wd):
         wd.find_element_by_link_text("Logout").click()
+
+    def open_add_contact_page(self, wd):
+        wd.find_element_by_link_text("add new").click()
+
+
+    def test_add_contact(self):
+        wd = self.wd
+        self.open_home_page(wd)
+        self.login(wd, username="admin", password="secret")
+        self.open_add_contact_page(wd)
+        self.create_contact(wd)
+        self.Logout(wd)
     
 
     
