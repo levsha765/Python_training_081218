@@ -1,21 +1,20 @@
-# -*- coding: utf-8 -*-
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
-import unittest
-from contact import Contact
 
-class AddContact(unittest.TestCase):
-    def setUp(self):
+class Application:
+    def __init__(self):
         self.wd = webdriver.Firefox()
         self.wd.implicitly_wait(30)
-        self.verificationErrors = []
-        self.accept_next_alert = True
 
 
-    def open_home_page(self, wd):
+    def open_home_page(self):
+        wd = self.wd
         wd.get("http://localhost/addressbook/")
 
-    def login(self, wd, username, password):
+
+    def login(self, username, password):
+        wd = self.wd
+        self.open_home_page()
         wd.find_element_by_name("user").click()
         wd.find_element_by_name("user").clear()
         wd.find_element_by_name("user").send_keys(username)
@@ -24,7 +23,37 @@ class AddContact(unittest.TestCase):
         wd.find_element_by_id("LoginForm").submit()
 
 
-    def create_contact(self, wd, contact):
+    def open_groups_page(self):
+        wd = self.wd
+        wd.find_element_by_link_text("groups").click()
+
+    def open_add_contact_page(self):
+        wd = self.wd
+        wd.find_element_by_link_text("add new").click()
+
+
+    def create_group(self, group):
+        wd = self.wd
+        self.open_groups_page()
+        # init group creation
+        wd.find_element_by_name("new").click()
+        # fill form group
+        wd.find_element_by_name("group_name").click()
+        wd.find_element_by_name("group_name").clear()
+        wd.find_element_by_name("group_name").send_keys(group.name)
+        wd.find_element_by_name("group_header").click()
+        wd.find_element_by_name("group_header").clear()
+        wd.find_element_by_name("group_header").send_keys(group.header)
+        wd.find_element_by_name("group_footer").click()
+        wd.find_element_by_name("group_footer").clear()
+        wd.find_element_by_name("group_footer").send_keys(group.footer)
+        # submit group creation
+        wd.find_element_by_name("submit").click()
+        self.return_groups_page()
+
+    def create_contact(self, contact):
+        wd = self.wd
+        self.open_add_contact_page()
         # init contect creation
         wd.find_element_by_name("firstname").click()
         # fill form contact
@@ -86,46 +115,23 @@ class AddContact(unittest.TestCase):
         wd.find_element_by_name("notes").send_keys(contact.notes)
         wd.find_element_by_xpath(
             "(.//*[normalize-space(text()) and normalize-space(.)='Notes:'])[1]/following::input[1]").click()
+        self.return_home()
 
-    def Logout(self, wd):
+
+    def return_groups_page(self):
+        wd = self.wd
+        wd.find_element_by_link_text("groups").click()
+        wd.find_element_by_xpath("//html").click()
+
+    def return_home(self):
+        wd = self.wd
+        wd.find_element_by_link_text("home").click()
+        wd.find_element_by_xpath("//html").click()
+
+
+    def Logout(self):
+        wd = self.wd
         wd.find_element_by_link_text("Logout").click()
 
-    def open_add_contact_page(self, wd):
-        wd.find_element_by_link_text("add new").click()
-
-
-    def test_add_contact(self):
-        wd = self.wd
-        self.open_home_page(wd)
-        self.login(wd, username="admin", password="secret")
-        self.open_add_contact_page(wd)
-        self.create_contact(wd, Contact(firstname="123", middlename="123", lastname="123",
-                 nickname="123", company="123", address="123",
-                 home="123", mobile="123", work="123", fax="123",
-                 email="123", email2="123", email3="123", homepage="123",
-                 bday="12", bmonth="March", byear="1960",
-                 aday="12", amonth="May", ayear="1961",
-                 address2="123", phone2="123", notes="123"))
-        self.Logout(wd)
-    
-
-    
-
-    
-    def close_alert_and_get_its_text(self):
-        try:
-            alert = self.wd.switch_to_alert()
-            alert_text = alert.text
-            if self.accept_next_alert:
-                alert.accept()
-            else:
-                alert.dismiss()
-            return alert_text
-        finally: self.accept_next_alert = True
-    
-    def tearDown(self):
+    def destroy(self):
         self.wd.quit()
-        self.assertEqual([], self.verificationErrors)
-
-if __name__ == "__main__":
-    unittest.main()
