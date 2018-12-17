@@ -1,3 +1,4 @@
+from datetime import time
 
 
 class SessionHelper:
@@ -16,6 +17,6 @@ class SessionHelper:
         wd.find_element_by_id("LoginForm").submit()
 
 
-    def Logout(self):
+    def logout(self):
         wd = self.app.wd
         wd.find_element_by_link_text("Logout").click()

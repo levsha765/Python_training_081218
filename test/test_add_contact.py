@@ -13,7 +13,7 @@ def test_add_contact(app):
                                bday="12", bmonth="March", byear="1960",
                                aday="12", amonth="May", ayear="1961",
                                address2="123", phone2="123", notes="123"))
-    app.session.Logout()
+    app.session.logout()
 
 
 

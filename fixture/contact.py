@@ -87,7 +87,8 @@ class ContactHelper:
         wd.switch_to_alert().accept()
         self.return_home()
 
+
     def return_home(self):
         wd = self.app.wd
         wd.find_element_by_link_text("home").click()
-        wd.find_element_by_xpath("//html").click()
+        #wd.find_element_by_xpath("//html").click()
