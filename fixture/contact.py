@@ -77,6 +77,18 @@ class ContactHelper:
             "(.//*[normalize-space(text()) and normalize-space(.)='Notes:'])[1]/following::input[1]").click()
         self.return_home()
 
+    def edit_first_contact(self, contact):
+        wd = self.app.wd
+        wd.find_element_by_name("selected[]").click()
+        wd.find_element_by_xpath("/html/body/div/div[4]/form[2]/table/tbody/tr[2]/td[8]/a/img").click()
+
+        wd.find_element_by_name("update").click()
+        self.return_home()
+
+
+
+
+
 
     def delete_first_contact(self):
         wd = self.app.wd
