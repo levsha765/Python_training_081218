@@ -95,7 +95,7 @@ class ContactHelper:
         #select first contact
         wd.find_element_by_name("selected[]").click()
         #submit deletion
-        wd.find_element_by_xpath("/html/body/div/div[4]/form[2]/div[2]/input").click()
+        wd.find_element_by_xpath("/html/body/div/div[4]/form[2]/div[2]/input").click() #/html/body/div/div[4]/form[2]/div[2]/input div.left:nth-child(8) > input:nth-child(1)
         wd.switch_to_alert().accept()
         self.return_home()
 
