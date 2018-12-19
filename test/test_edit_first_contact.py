@@ -1,13 +1,13 @@
-rom model.contact import Contact
+from model.contact import Contact
 
 
 def test_add_contact(app):
     app.session.login(username="admin", password="secret")
-    app.contact.edit_first_contact(Contact(firstname="123", middlename="123", lastname="123",
-                               nickname="123", company="123", address="123",
-                               home="123", mobile="123", work="123", fax="123",
-                               email="123", email2="123", email3="123", homepage="123",
-                               bday="12", bmonth="March", byear="1960",
-                               aday="12", amonth="May", ayear="1961",
-                               address2="123", phone2="123", notes="123"))
+    app.contact.edit_first_contact(Contact(firstname="!4123", middlename="4123", lastname="4123",
+                               nickname="4123", company="4123", address="4123",
+                               home="4123", mobile="4123", work="4123", fax="4123",
+                               email="4123", email2="8123", email3="4123", homepage="4123",
+                               bday="27", bmonth="October", byear="1958",
+                               aday="30", amonth="June", ayear="1969",
+                               address2="4123", phone2="4123", notes="5123"))
     app.session.logout()

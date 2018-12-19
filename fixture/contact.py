@@ -15,8 +15,15 @@ class ContactHelper:
         wd = self.app.wd
         self.open_add_contact_page()
         # init contect creation
-        wd.find_element_by_name("firstname").click()
+        self.fill_form_contact(contact)
+        wd.find_element_by_xpath(
+            "(.//*[normalize-space(text()) and normalize-space(.)='Notes:'])[1]/following::input[1]").click()
+        self.return_home()
+
+    def fill_form_contact(self, contact):
+        wd = self.app.wd
         # fill form contact
+        wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").clear()
         wd.find_element_by_name("firstname").send_keys(contact.firstname)
         wd.find_element_by_name("middlename").clear()
@@ -73,21 +80,14 @@ class ContactHelper:
         wd.find_element_by_name("phone2").send_keys(contact.phone2)
         wd.find_element_by_name("notes").clear()
         wd.find_element_by_name("notes").send_keys(contact.notes)
-        wd.find_element_by_xpath(
-            "(.//*[normalize-space(text()) and normalize-space(.)='Notes:'])[1]/following::input[1]").click()
-        self.return_home()
 
     def edit_first_contact(self, contact):
         wd = self.app.wd
         wd.find_element_by_name("selected[]").click()
         wd.find_element_by_xpath("/html/body/div/div[4]/form[2]/table/tbody/tr[2]/td[8]/a/img").click()
-
+        self.fill_form_contact(contact)
         wd.find_element_by_name("update").click()
         self.return_home()
-
-
-
-
 
 
     def delete_first_contact(self):
