@@ -76,3 +76,7 @@ class GroupHelper:
         wd.find_element_by_xpath("/html/body/div/div[3]/ul/li[1]/a").click()
 
 
+    def count(self):
+        wd = self.app.wd
+        self.open_groups_page()
+        return len(wd.find_element_by_name("selected[]"))
