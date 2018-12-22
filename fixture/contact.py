@@ -9,7 +9,8 @@ class ContactHelper:
 
     def open_add_contact_page(self):
         wd = self.app.wd
-        wd.find_element_by_link_text("add new").click()
+        if not (wd.current_url.endswith("/edit.php") and len(wd.find_elements_by_name("photo")) > 0):
+            wd.find_element_by_link_text("add new").click()
 
 
     def create(self, contact):
@@ -84,8 +85,8 @@ class ContactHelper:
 
     def return_home(self):
         wd = self.app.wd
-        wd.find_element_by_link_text("home").click()
-        #wd.find_element_by_xpath("//html").click()
+        if not len(wd.find_elements_by_xpath("/html/body/div/div[4]/form[2]/div[1]/input")) > 0:
+            wd.find_element_by_link_text("home").click()
 
 
     def count(self):
