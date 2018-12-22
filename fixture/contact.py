@@ -81,6 +81,10 @@ class ContactHelper:
         wd.find_element_by_name("notes").clear()
         wd.find_element_by_name("notes").send_keys(contact.notes)
 
+    
+
+
+
     def edit_first_contact(self, contact):
         wd = self.app.wd
         wd.find_element_by_name("selected[]").click()
@@ -104,3 +108,9 @@ class ContactHelper:
         wd = self.app.wd
         wd.find_element_by_link_text("home").click()
         #wd.find_element_by_xpath("//html").click()
+
+
+    def count(self):
+        wd = self.app.wd
+        self.return_home()
+        return len(wd.find_elements_by_name("selected[]"))
