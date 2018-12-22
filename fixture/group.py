@@ -67,8 +67,6 @@ class GroupHelper:
     def return_groups_page(self):
         wd = self.app.wd
         wd.find_element_by_xpath("/html/body/div/div[3]/ul/li[3]/a").click()
-        #wd.find_element_by_link_text("groups").click()
-        #wd.find_element_by_xpath("//html").click()
 
 
     def return_home(self):
