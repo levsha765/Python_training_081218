@@ -1,10 +1,9 @@
 from geometry_python.geom2d import point
 
-l1 = [point.Point(0,0), point.Point(1,2), point.Point(2,1)]
 
-l2 = sorted(l1)
+l = list(map(lambda i: point.Point(i, i*i), range(-5, 6)))
 
-print(l1)
+l2 = list(filter(lambda p: p.x % 2 == 0, l))
+
+print(l)
 print(l2)
-
-
