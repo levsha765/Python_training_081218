@@ -21,7 +21,7 @@ class GroupHelper:
         # submit group creation
         wd.find_element_by_name("submit").click()
         self.app.open_home_page()
-        #self.return_groups_page()
+
 
 
     def fill_group_form(self, group):
@@ -45,7 +45,6 @@ class GroupHelper:
         self.select_first_group()
         #submit deletion
         wd.find_element_by_name("delete").click()
-        #self.return_groups_page()
         self.app.open_home_page()
 
 
@@ -58,23 +57,18 @@ class GroupHelper:
         self.fill_group_form(new_group_data)
         # submit
         wd.find_element_by_name("update").click()
-        #self.return_groups_page()
         self.app.open_home_page()
 
     def select_first_group(self):
         wd = self.app.wd
         wd.find_element_by_name("selected[]").click()
 
-    # def return_groups_page(self):
-    #     wd = self.app.wd
-    #     wd.find_element_by_xpath("/html/body/div/div[3]/ul/li[3]/a").click()
 
 
     def return_home(self):
         wd = self.app.wd
         if not len(wd.find_elements_by_xpath("/html/body/div/div[4]/form[2]/div[1]/input")) > 0:
             wd.find_element_by_link_text("home").click()
-        #wd.find_element_by_xpath("/html/body/div/div[3]/ul/li[1]/a").click()
 
 
     def count(self):
