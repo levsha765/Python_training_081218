@@ -7,7 +7,9 @@ def clear(s):
 
 def test_all_data_on_home_page(app):
     if app.contact.count() == 0:
-        app.contact.create(Contact(firstname="test"))
+        app.contact.create(Contact(firstname="test", lastname="lastname",
+                       home="123", mobile="456", work="789", phone2="5678", address="address",
+                       email="email", email2="email2", email3="email3"))
     all_contacts = app.contact.get_contact_list()
     index = randrange(len(all_contacts))
     contact_from_home_page = app.contact.get_contact_list()[index]
