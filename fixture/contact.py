@@ -125,8 +125,11 @@ class ContactHelper:
                 firstname = element.find_element_by_xpath(".//td[3]").text
                 cells = element.find_elements_by_tag_name("td")
                 all_phones = cells[5].text
+                all_emails = cells[4].text
+                address = cells[3].text
                 self.contact_cache.append(Contact(lastname=lastname, firstname=firstname, id=id,
-                                                  all_phones_form_homepage = all_phones))
+                                                  all_phones_form_homepage=all_phones, address=address,
+                                                  all_emails_form_homepage=all_emails))
         return list(self.contact_cache)
 
 
@@ -156,8 +159,13 @@ class ContactHelper:
         work = wd.find_element_by_name("work").get_attribute("value")
         mobile = wd.find_element_by_name("mobile").get_attribute("value")
         phone2 = wd.find_element_by_name("phone2").get_attribute("value")
+        address = wd.find_element_by_name("address").get_attribute("value")
+        email = wd.find_element_by_name("email").get_attribute("value")
+        email2 = wd.find_element_by_name("email2").get_attribute("value")
+        email3 = wd.find_element_by_name("email3").get_attribute("value")
         return Contact(firstname=firstname, lastname=lastname, id=id,
-                       home=home, work=work, mobile=mobile, phone2=phone2)
+                       home=home, work=work, mobile=mobile, phone2=phone2, address=address,
+                       email=email, email2=email2, email3=email3)
 
 
     def get_contact_from_view_page(self, index):
