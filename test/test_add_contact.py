@@ -4,14 +4,18 @@ import pytest
 from model.contact import Contact
 import random
 import string
+import re
+from random import  randint
 
 def random_string(prefix, maxlen):
-    symbols = string.ascii_letters + string.digits + string.punctuation + " "*10
+    symbols = string.ascii_letters + string.digits + " "*10
+    if symbols[-1] == [" "]:
+        symbols[-1] = [""]
     return prefix + "".join([random.choice(symbols) for i in range(random.randrange(maxlen))])
 
 def random_day():
-    day = string.digits[1:31]
-    return day
+    day = list(range(1,32))
+    return str(random.choice(day))
 
 def random_month():
     month = ["January", "February","March","April","May","June","July","August","September","October","November",
@@ -19,8 +23,8 @@ def random_month():
     return random.choice(month)
 
 def random_year():
-    year = string.digits[1000:2019]
-    return year
+    year = list(range(1,2020))
+    return str(random.choice(year))
 
 
 testdata = [Contact(firstname="", middlename="", lastname="",
@@ -38,9 +42,9 @@ testdata = [Contact(firstname="", middlename="", lastname="",
             email2=random_string("email2", 10), email3=random_string("email3", 10),
             homepage=random_string("homepage", 10), bday=random_day(), bmonth=random_month(),
             byear=random_year(), aday=random_day(), amonth=random_month(), ayear=random_year(),
-            address2=random_string("fax", 10), phone2=random_string("fax", 10), notes=random_string("fax", 10)
+            address2=random_string("address2", 10), phone2=random_string("phone2", 10), notes=random_string("notes", 10)
             )
-    for i in range(2)
+    for i in range(5)
 ]
 @pytest.mark.parametrize("contact", testdata, ids=[repr(x) for x in testdata])
 def test_add_contact(app, contact):
