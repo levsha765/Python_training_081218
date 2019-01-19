@@ -7,10 +7,15 @@ from fixture.contact import ContactHelper
 class Application:
 
 
-    def __init__(self):
-        #self.wd = webdriver.Firefox()
-        self.wd = webdriver.Chrome()
-        #self.wd.implicitly_wait(3)
+    def __init__(self, browser="Chrome"):
+        if browser == "Chrome":
+            self.wd = webdriver.Chrome()
+        elif browser == "Firefox":
+            self.wd = webdriver.Firefox()
+        elif browser == "Ie":
+            self.wd = webdriver.Ie()
+        else:
+            raise ValueError("Unrecognized browser %s" % browser)
         self.session = SessionHelper(self)
         self.group = GroupHelper(self)
         self.contact = ContactHelper(self)
