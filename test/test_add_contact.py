@@ -9,8 +9,8 @@ from model.contact import Contact
 
 
 #@pytest.mark.parametrize("contact", testdata, ids=[repr(x) for x in testdata])
-def test_add_contact(app, data_contacts):
-    contact = data_contacts
+def test_add_contact(app, json_contacts):
+    contact = json_contacts
     old_contacts = app.contact.get_contact_list()
     # contact = Contact(firstname="123", middlename="123", lastname="123",
     #                            nickname="123", company="123", address="123",
